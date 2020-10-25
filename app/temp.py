@@ -1,5 +1,10 @@
-from sqlalchemy import create_engine
 import pandas as pd
-engine = create_engine('sqlite:////home/workspace/data/DisasterResponse.db')
-df = pd.read_sql('SELECT * FROM clean_data', engine)
-print(df.head())
+import json
+
+#f = open("../models/gensim_summary.txt", "r")
+#text = f.read().split("\n")
+#json_string = json.dumps(text)
+#print(json_string)
+#f.close()
+with open("../models/gensim_summary.txt") as f:
+    text = f.read().split("\n")

@@ -65,21 +65,19 @@
 </div>
 
 <div class="container">
-  <h1 class="text-center"> word cloud</h1>
+  <h1 class="text-center">Response word cloud</h1>
+	<p class="text-center">visual representation of disaster messages</p>
     <img src="{{url_for('static', filename='word_cloud.png')}}" alt="word_cloud" style="width:100%">
 </div>
 <div class="container">
-  <h1 class="text-center"> gensim summary</h1>
-  <p> First Sentence 111111111111</p>
-  <p> First Sentence 2222222222222</p>
-  <p> First Sentence 333333333333</p>
-  <p> First Sentence 444444444444</p>
-  <p> First Sentence 555555555</p>
-  <p> First Sentence 6666</p>
-  <p> First Sentence 7777</p>
-  <p> First Sentence 8888</p>
+  <h1 class="text-center">Response Text Summary</h1>
+  <p class="text-center">power by Gensim TextRank Summariser</p>
+  <ul class="list-group">
+    {%for i in range(0, 20)%}
+    <li class="list-group-item">{{gensim_summary[i]}}</li>
+    {%endfor%} 
+  </ul>
 </div>
-
   
 <script type="text/javascript">
     const graphs = {{graphJSON | safe}};

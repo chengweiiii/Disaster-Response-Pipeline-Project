@@ -17,7 +17,7 @@ def load_data():
 
 #produce word cloud
 def produce_wordcloud(text):
-    stopwords = STOPWORDS.union({'need','one','will','said','thank','people','now','help','area','well','including', 'us', 'information','know','work','time','day','government','country','many','please','much','service','region'})
+    stopwords = STOPWORDS.union({'need','one','will','said','thank','people','now','help','area','well','including', 'us', 'information','know','work','time','day','government','country','many','please','much','service','region','new'})
     wordcloud = WordCloud(stopwords=stopwords,background_color='white',width=7000,height=7000,max_words=400).generate(text)
     fig = plt.figure(figsize=(20,10))
     plt.imshow(wordcloud)

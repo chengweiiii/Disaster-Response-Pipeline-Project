@@ -70,9 +70,12 @@ def index():
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
     
+    #prepare gensim_summary
+    with open("../models/gensim_summary.txt") as f:
+        text = f.read().split("\n")
+    
     # render web page with plotly graphs
-    return render_template('master.html', ids=ids, graphJSON=graphJSON)
-
+    return render_template('master.html', ids=ids, graphJSON=graphJSON, gensim_summary=text)
 
 # web page that handles user query and displays model results
 @app.route('/go')
