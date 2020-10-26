@@ -4,6 +4,11 @@ Folling a disaster, you'll get millions of tweet message. The goal of this proje
 # Result
 The service is provided by a web app, which you can input message and a prediction. Also there are 3 analytical graph that can give you a glimps of the training dataset (bar chart, word cloud, text summary)
 
+# Service Screen Shots
+![image](https://github.com/chengweiiii/Disaster-Response-Pipeline-Project/blob/main/screen_shot1.png)
+![image](https://github.com/chengweiiii/Disaster-Response-Pipeline-Project/blob/main/screen_shot2.png)
+![image](https://github.com/chengweiiii/Disaster-Response-Pipeline-Project/blob/main/screen_shot3.png)
+
 # Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
