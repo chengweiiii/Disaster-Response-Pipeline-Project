@@ -56,7 +56,7 @@ def build_model():
     ])
     
     parameters =  {
-            'clf__estimator__n_estimators': [200, 300],
+            'clf__estimator__n_estimators': [10,15],
             'clf__estimator__n_jobs': np.array([-1])
         }
 
