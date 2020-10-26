@@ -1,3 +1,7 @@
+'''
+This file help produce the model that will be used for predict user input. Since the pipeline contain grid search method, so  it may take several hours to train the model.
+'''
+
 # import libraries
 import sys
 import pandas as pd
@@ -52,10 +56,11 @@ def build_model():
     ])
     
     parameters =  {
-        'clf__estimator__n_estimators': [80,130]
-    }
-    
-    cv = GridSearchCV(pipeline, param_grid=parameters, n_jobs=-1)
+            'clf__estimator__n_estimators': [200, 300],
+            'clf__estimator__n_jobs': np.array([-1])
+        }
+
+    cv = GridSearchCV(pipeline, param_grid=parameters,n_jobs=-1)
     return cv
 
 def evaluate_model(model, X_test, Y_test, category_names):
