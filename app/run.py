@@ -69,6 +69,7 @@ def index():
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
+    gensim_summary = " "
     
     #prepare gensim_summary
     with open("../models/gensim_summary.txt") as f:
@@ -87,11 +88,16 @@ def go():
     classification_labels = model.predict([query])[0]
     classification_results = dict(zip(df.columns[4:], classification_labels))
 
+    # prepare gensim_summary
+    with open("../models/gensim_summary.txt") as f:
+        text = f.read().split("\n")
+    
     # This will render the go.html Please see that file. 
     return render_template(
         'go.html',
         query=query,
-        classification_result=classification_results
+        classification_result=classification_results, 
+        gensim_summary = text
     )
 
 def main():
