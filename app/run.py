@@ -1,3 +1,7 @@
+'''
+this is the main web app 
+'''
+
 import json
 import plotly
 import pandas as pd
@@ -15,6 +19,7 @@ from sqlalchemy import create_engine
 app = Flask(__name__)
 
 def tokenize(text):
+    #tokenizing & lemmatizing text
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 

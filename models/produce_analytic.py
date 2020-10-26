@@ -1,3 +1,6 @@
+'''
+This file provides the analytics service for word cloud & Gensim summary. Note: It may take several hour to complete all the tasks.
+'''
 #import library
 import pandas as pd
 import numpy as np
@@ -25,8 +28,8 @@ def produce_wordcloud(text):
     fig.savefig('world_cloud.png', dpi = 150)
 
 def produce_gensim_summary(text):
-    #gensim summarization
-    summary = gensim.summarization.summarize(text, ratio=0.0001) 
+    #gensim summarization - may take several hours for full data
+    summary = gensim.summarization.summarize(text, ratio=0.001) 
     f = open("gensim_summary.txt", "w")
     f.write(summary)
     f.close()

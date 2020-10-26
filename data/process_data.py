@@ -1,3 +1,7 @@
+'''
+This file provides the main ETL job and save it into DisasterResponse.db
+'''
+
 # import libraries
 import sys
 import pandas as pd
